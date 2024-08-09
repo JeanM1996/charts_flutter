@@ -131,16 +131,16 @@ class SimpleLegendEntryLayout implements LegendEntryLayout {
         : null;
     if (isHidden) {
       // Use a default color for hidden legend entries if none is provided.
-      color ??= Theme.of(context).textTheme.bodyText2!.color;
-      color = color!.withOpacity(0.26);
+      color ??= Theme.of(context).textTheme.bodyMedium?.color;
+      color = color?.withOpacity(0.26);
     }
 
     return new TextStyle(
-        inherit: true,
-        fontFamily: textStyle?.fontFamily,
-        fontSize: textStyle?.fontSize != null
-            ? textStyle!.fontSize!.toDouble()
-            : null,
-        color: color);
+      inherit: true,
+      fontFamily: textStyle?.fontFamily,
+      fontSize:
+          textStyle?.fontSize != null ? textStyle!.fontSize!.toDouble() : null,
+      color: color,
+    );
   }
 }
