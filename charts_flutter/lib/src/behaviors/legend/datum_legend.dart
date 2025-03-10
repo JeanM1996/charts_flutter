@@ -26,7 +26,7 @@ import 'package:charts_common/common.dart' as common
         SelectionModelType,
         TextStyleSpec;
 import 'package:flutter/widgets.dart'
-    show BuildContext, EdgeInsets, Widget, hashValues;
+    show BuildContext, EdgeInsets, Widget;
 import 'package:meta/meta.dart' show immutable;
 import '../../chart_container.dart' show ChartContainerRenderObject;
 import '../chart_behavior.dart'
@@ -275,18 +275,7 @@ class DatumLegend<D> extends ChartBehavior<D> {
 
   @override
   int get hashCode {
-    return hashValues(
-        selectionModelType,
-        contentBuilder,
-        position,
-        outsideJustification,
-        insideJustification,
-        showMeasures,
-        legendDefaultMeasure,
-        measureFormatter,
-        secondaryMeasureFormatter,
-        entryTextStyle);
-  }
+
 }
 
 /// Flutter specific wrapper on the common Legend for building content.

@@ -27,9 +27,9 @@ import 'package:charts_common/common.dart' as common
         SelectionModelType,
         TextStyleSpec;
 import 'package:collection/collection.dart' show ListEquality;
-import 'package:flutter/widgets.dart'
-    show BuildContext, EdgeInsets, Widget, hashValues;
+import 'package:flutter/widgets.dart' show BuildContext, EdgeInsets, Widget;
 import 'package:meta/meta.dart' show immutable;
+
 import '../../chart_container.dart' show ChartContainerRenderObject;
 import '../chart_behavior.dart'
     show BuildableBehavior, ChartBehavior, GestureType;
@@ -285,22 +285,6 @@ class SeriesLegend<D> extends ChartBehavior<D> {
         secondaryMeasureFormatter == o.secondaryMeasureFormatter &&
         entryTextStyle == o.entryTextStyle;
   }
-
-  @override
-  int get hashCode {
-    return hashValues(
-        selectionModelType,
-        contentBuilder,
-        position,
-        outsideJustification,
-        insideJustification,
-        defaultHiddenSeries,
-        showMeasures,
-        legendDefaultMeasure,
-        measureFormatter,
-        secondaryMeasureFormatter,
-        entryTextStyle);
-  }
 }
 
 /// Flutter specific wrapper on the common Legend for building content.
@@ -337,7 +321,7 @@ class _FlutterSeriesLegend<D> extends common.SeriesLegend<D>
 
   @override
   Widget build(BuildContext context) {
-    final hasSelection = legendState.legendEntries != null &&
+    final hasSelection =
         legendState.legendEntries.any((entry) => entry.isSelected);
 
     // Show measures if [showMeasures] is true and there is a selection or if
