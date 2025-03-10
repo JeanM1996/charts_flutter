@@ -1,6 +1,6 @@
 publish_to: none
 name: charts_flutter
-version: 0.15.0
+version: 0.16.0
 description: Material Design charting library for flutter.
 homepage: https://github.com/google/charts
 
